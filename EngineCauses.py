@@ -45,7 +45,7 @@ class MotorCausas(KnowledgeEngine):
     @Rule(
         DiagnosticoFact(descripcion=MATCH.desc),
         ProcesoFact(tipo_junta=MATCH.junta),
-        TEST(lambda desc, junta: "múltiples defectos detectados" in desc.lower() and junta.lower() == "v-groove")
+        TEST(lambda desc, junta: "múltiples defectos detectados" in desc.lower() and junta.lower() == "butt-joint")
     )
     def preparacion_junta_inadecuada(self):
         mensaje = "Configuración de junta o preparación de ranura inadecuada"

@@ -17,13 +17,13 @@ class MotorDiagnostico(KnowledgeEngine):
         self.declare(Diagnostico(descripcion=mensaje))
         print(mensaje)
 
-    @Rule(InspeccionFact(tipo_defecto="discontinuities", R=P(lambda r: 0.1 < r < 0.6)))
+    @Rule(InspeccionFact(tipo_defecto="discontinuidades", R=P(lambda r: 0.1 < r < 0.6)))
     def discontinuidad_moderada(self):
         mensaje = "Discontinuidad moderada: falta de fusión"
         self.declare(Diagnostico(descripcion=mensaje))
         print(mensaje)
 
-    @Rule(InspeccionFact(tipo_defecto="stains", confianza=P(lambda c: c >= 0.6)))
+    @Rule(InspeccionFact(tipo_defecto="manchas", confianza=P(lambda c: c >= 0.6)))
     def manchas_superficiales(self):
         mensaje = "Contaminación superficial detectada"
         self.declare(Diagnostico(descripcion=mensaje))
